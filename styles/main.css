@@ -1,26 +1,25 @@
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #fc1e8a;
     user-select: none;
+    overflow: hidden;
 }
 
-.container{
+.container {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background: linear-gradient(
-    325deg,
-    #03001e 0%,
-    #7303c0 30%,
-    #ec38bc 70%,
-    #fdeff9 100%
-    );
+    background: linear-gradient(325deg,
+            #03001e 0%,
+            #7303c0 30%,
+            #ec38bc 70%,
+            #fdeff9 100%);
     padding: 40px 60px;
 
 }
@@ -32,7 +31,7 @@ h2 {
     letter-spacing: 0.1em;
 }
 
-.reset{
+.reset {
     padding: 15px 20px;
     width: 100%;
     color: #000;
@@ -45,23 +44,23 @@ h2 {
     font-weight: 600;
 }
 
-.reset:focus{
+.reset:focus {
     color: #ec38bc;
     background-color: #262809;
 
 }
 
-.game{
+.game {
     width: 430px;
     height: 430px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     transform-style: preserve-3d;
-    perspective: 500px;    
+    perspective: 500px;
 }
 
-.item{
+.item {
     position: relative;
     width: 100px;
     height: 100px;
@@ -75,7 +74,7 @@ h2 {
     transition: 0.25s;
 }
 
-.item::after{
+.item::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -89,7 +88,71 @@ h2 {
     transform: rotateY(0deg);
 }
 
-.boxOpen::after, 
+.boxOpen::after,
 .boxMatch::after {
     transform: rotateY(180deg);
+}
+
+.countdown {
+    font-size: 2em;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .game {
+        width: 350px;
+        height: 350px;
+    }
+
+    .item {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5em;
+    }
+
+    .reset {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .game {
+        width: 300px;
+        height: 300px;
+    }
+
+    .item {
+        width: 65px;
+        height: 65px;
+        font-size: 2em;
+    }
+
+    .reset {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .countdown {
+        font-size: 1.5em;
+    }
 }
