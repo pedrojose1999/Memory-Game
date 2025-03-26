@@ -29,7 +29,7 @@ function createBoard() {
 
     shuffledEmojis.forEach(emoji => {
         let box = document.createElement("div");
-        box.className = "item boxOpen"; // para ver as cartas antes de começar
+        box.className = "item boxOpen"; 
         box.innerHTML = emoji;
         box.onclick = handleClick;
         gameContainer.appendChild(box);
